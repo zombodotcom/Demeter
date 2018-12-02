@@ -11,6 +11,7 @@
 
 
 "Though Demeter is often described simply as the goddess of the harvest, she presided also over the [sacred law](https://en.wikipedia.org/wiki/Religious_law "Religious law"), and the cycle of life and death. She and her daughter [Persephone](https://en.wikipedia.org/wiki/Persephone "Persephone") were the central figures of the [Eleusinian Mysteries](https://en.wikipedia.org/wiki/Eleusinian_Mysteries "Eleusinian Mysteries") that predated the [Olympian pantheon](https://en.wikipedia.org/wiki/Olympian_pantheon "Olympian pantheon")."
+
 source: https://en.wikipedia.org/wiki/Demeter
 
 
