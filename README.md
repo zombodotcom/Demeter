@@ -114,10 +114,29 @@ After that
 
 you can test subscriptions like this
 
-    mosquitto_sub -d -h 192.168.0.100 -u zombo -P pi -t temp -t humid -t moist -t esp32/pump -t esp32/led
+    mosquitto_sub -d -h 192.168.0.100 -u username -P password -t temp -t humid -t moist -t esp32/pump -t esp32/led
 
  and publish like this 
  
 
-    mosquitto_pub -d -u zombo -P pi -t esp32/led -m "on"
-    mosquitto_pub -d -u zombo -P pi -t temp -m "25"
+    mosquitto_pub -d -u username -P password -t esp32/led -m "on"
+    mosquitto_pub -d -u username -P password -t temp -m "25"
+
+The MQTT Logger Built in python was made by
+http://www.steves-internet-guide.com/simple-python-mqtt-data-logger/
+
+
+Download the Topic Logger
+
+
+
+be sure to install patho-mqtt
+https://www.eclipse.org/paho/clients/python/docs/
+
+    pip3 install paho-mqtt
+
+To start logging all files run:
+
+    python3 mqtt-topic-logger.py -b 192.168.0.100 -t "temp" -t "humid" -u username -P password -s
+
+there are other options like where to log files, but the documentation is pretty straightforward. 
