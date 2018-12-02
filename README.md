@@ -1,3 +1,4 @@
+
 # Demeter
 
 
@@ -59,3 +60,64 @@ It uses multiple libraries:
 	* MQTT publishing and subcribing for microcontrollers
 * APDS-9960 SPARKFUN Library
 	* Which has been edited to allow redefinition of SDA SCL pins
+
+
+**Pi MQT Setup**
+
+First Update
+
+    sudo apt-get update
+    sudo apt-get upgrade
+
+Then install MQTT
+
+
+    sudo apt-get install mosquitto -y
+    sudo apt-get install mosquitto-clients -y
+
+then edit your mqtt broker config
+
+    sudo nano /etc/mosquitto/mosquitto.conf
+
+COMMENT OUT 
+
+    include_dir /etc/mosquitto/conf.d
+
+
+Add these new lines 
+
+    allow_anonymous false
+    password_file /etc/mosquitto/pwfile
+    listener 1883
+then set a username, you will then be asked to type in a password
+
+    sudo mosquitto_passwd -c /etc/mosquitto/pwfile usernamehere
+
+then reboot the pi
+
+    sudo reboot
+
+to see if its running 
+restart it, stop it, or start it, 
+
+    sudo service mosquitto stop
+    sudo service mosquitto start
+    sudo service mosquitto restart
+
+
+I prefer to run it as a daemon 
+
+    mosquitto -d
+
+
+After that 
+
+you can test subscriptions like this
+
+    mosquitto_sub -d -h 192.168.0.100 -u zombo -P pi -t temp -t humid -t moist -t esp32/pump -t esp32/led
+
+ and publish like this 
+ 
+
+    mosquitto_pub -d -u zombo -P pi -t esp32/led -m "on"
+    mosquitto_pub -d -u zombo -P pi -t temp -m "25"
