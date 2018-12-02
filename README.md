@@ -4,7 +4,9 @@
 <img src="https://i.imgur.com/onVL47M.png" alt="drawing" align="right" width="200"/>
 
 
-
+**Demeter** 
+An ESP32, and Raspberry Pi based project designed to tackle IoT based home garden automation. 
+This project was made to use an ESP32, Raspberry Pi, Sensors, and message protocol systems, to create an example on the functionality of hardware and software. 
 
 
 **Demeter** is the goddess of the harvest and presides over grains and the fertility of the earth. She is the Goddess of agriculture, harvest, fertility and sacred law. Although she was most often referred to as the goddess of the harvest, she was also goddess of sacred law and the cycle of life and death.
@@ -15,9 +17,7 @@
 source: https://en.wikipedia.org/wiki/Demeter
 
 
-**Demeter** 
-An ESP32, and Raspberry Pi based project designed to tackle IoT based home garden automation. 
-This project was made to use an ESP32, Raspberry Pi, Sensors, and message protocol systems, to create an example on the functionality of hardware and software. 
+
 
 Demeter is used to measure:
 * Temperature
