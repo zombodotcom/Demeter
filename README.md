@@ -5,7 +5,7 @@
 
 
 **Demeter** 
-An ESP32, and Raspberry Pi based project designed to tackle IoT based home garden automation. 
+is an ESP32, and Raspberry Pi based project designed to tackle IoT based home garden automation. 
 This project was made to use an ESP32, Raspberry Pi, Sensors, and message protocol systems, to create an example on the functionality of hardware and software. 
 
 
