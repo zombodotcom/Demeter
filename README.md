@@ -127,6 +127,7 @@ http://www.steves-internet-guide.com/simple-python-mqtt-data-logger/
 
 
 Download the Topic Logger
+http://www.steves-internet-guide.com/simple-python-mqtt-topic-logger/
 
 
 
