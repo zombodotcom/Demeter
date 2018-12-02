@@ -142,5 +142,4 @@ To start logging all files run:
 
 there are other options like where to log files, but the documentation is pretty straightforward. 
 
-###Video Demo
-https://www.youtube.com/watch?v=5pMPL1SeoTc&feature=youtu.be&fbclid=IwAR2QvC8wq17j0w5lLA0l_VR7ZDK5Ay-3x2_NUq7i6ikyJTg7kcQ0YL093_U
+## **[Video Demo](https://www.youtube.com/watch?v=5pMPL1SeoTc&feature=youtu.be&fbclid=IwAR2QvC8wq17j0w5lLA0l_VR7ZDK5Ay-3x2_NUq7i6ikyJTg7kcQ0YL093_U)**
