@@ -172,7 +172,9 @@ there are other options like where to log files, but the documentation is pretty
   
   
 
-ESP32-BLEMESH ( First of its kind BLE mesh networking)
+**ESP32-BLEMESH ( First of its kind BLE mesh networking)**
+
+ - same as Wifi except using BLE
 
   
 
