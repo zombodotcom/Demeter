@@ -1,4 +1,5 @@
 
+
 # Demeter
 
 
@@ -143,3 +144,45 @@ To start logging all files run:
 there are other options like where to log files, but the documentation is pretty straightforward. 
 
 ## **[Video Demo](https://www.youtube.com/watch?v=5pMPL1SeoTc&feature=youtu.be&fbclid=IwAR2QvC8wq17j0w5lLA0l_VR7ZDK5Ay-3x2_NUq7i6ikyJTg7kcQ0YL093_U)**
+
+
+## **Future Prospects**
+
+**Amazon freeRTOS ESP32 implementations.**
+
+-   Allows for Amazon IoT based integration
+    
+-   Web development and App development for the cloud
+    
+
+  
+  
+
+**ESP32-MESH**
+
+-   Each ESP-32 is a node in a mesh network
+    
+
+-   Self healing mesh network
+    
+
+-   Assigns new parent if parent disappears
+    
+
+  
+  
+
+ESP32-BLEMESH ( First of its kind BLE mesh networking)
+
+  
+
+**Google Cloud IoT**
+
+-   Same as Amazon
+    
+
+  
+
+**Mobile App**
+
+-   Option 1: just loads a webpage
