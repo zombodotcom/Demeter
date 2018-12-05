@@ -1,4 +1,4 @@
-##This is the Soft AP
+## This is the Soft AP
 
 Make sure to change the Demeter offline to the new SSID and pass
 the pi should grab 192.168.0.100 first, if it boots up. or you set a static ip for wlan0
