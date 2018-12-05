@@ -3,6 +3,9 @@
 ## Project setup
 ```
 npm install
+
+Also Install MQTT.JS
+npm install mqtt --save
 ```
 
 ### Compiles and hot-reloads for development
@@ -19,3 +22,6 @@ npm run build
 ```
 npm run lint
 ```
+
+
+
