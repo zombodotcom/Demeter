@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div id="top">
     <div class="nav">
       <img src="../assets/Logo3.png" style="height: 130px; width: 130px;background-color:white"></img>
       <!-- <span style="color: white;font-weight: bold; font-size: 35pt; font-family: Georgia;text-align: center;">Demeter</span> -->
@@ -28,7 +28,7 @@
       </div>
     </div>
     <div name="graphs" class="graphs" v-show="currentNav == 'graphs'">
-      <span class="center-text" style="margin-top: 15px;">Data From PI (Refresh for latest)</span><br/><br/><button class="LargeButton" @click="reRender">REFRESH DATA</button><br/><br/>
+      <span class="center-text" style="margin-top: 15px;">Data From PI (Refresh for latest)</span><br/><br/><button id="refresh" class="LargeButton" @click="reRender">REFRESH DATA</button><br/><br/>
       <span class="center-text" style="color: #1e90ff;margin-top: 15px;">Temperature</span>
       <div id="temp" class="box" style="width: 90%">
       </div>
@@ -56,7 +56,20 @@
   </div>
 </template>
 
+
 <script>
+window.onload = function refreshGraphs(){
+    timeOut=0;
+    clearTimeout(timeOut);
+     document.getElementById("refresh").click();
+    timeOut = setTimeout(function (){refreshGraphs()},1000);
+}
+</script>
+
+
+<script>
+
+
 import Datepicker from 'vuejs-datepicker';
 import * as d3 from "d3v4";
 export default {
@@ -80,27 +93,34 @@ export default {
   mounted() {
     var mqtt = require('mqtt')
     console.log(mqtt);
-    //this.client = mqtt.connect({port: 1883, host: '192.168.0.100', username: 'zombo', password:'pi', keepalive:10000});
+    var client = mqtt.connect("ws:://192.168.0.100",{port:9001, username: "zombo", password:"pi"});
     //this.client = mqtt.connect('mqtt://test.mosquito.org');
-//console.log(this.client);
+    // console.log("rip\n");
+console.log(client);
+client.on("connect",function(){	
+console.log("connected");
+})
 
     this.currentNav = "home";
     this.isActive = true;
-    //this.client.subscribe('temp');
-    console.log(this.client);
-    console.log("HIT")
-    //this.client.on('connect', function () {
-    //  console.log("CONNECTED");
-    //  this.client.subscribe('temp', function (err) {
-     //   if (!err) {
-     //     client.publish('temp', 'Hello mqtt')
-     //   }
-    //  })
-    //})
-    //this.client.on('message', function (topic, message) {
-    //  console.log("HIT")
-    //  console.log(message);
-    //});
+    client.subscribe('temp');
+    client.subscribe('humid');
+    client.subscribe('ambient');
+    client.subscribe('moist');
+    console.log(client);
+
+    client.on('connect', function () {
+    console.log("CONNECTED");
+    client.publish('esp32/led', 'on')
+    })
+    console.log("led off time\n");
+    client.publish('esp32/led', 'off');
+    client.on('message', function (topic, message) {
+    var decoded = new TextDecoder("utf-8").decode(message) // this is where its decoded. 
+    console.log(message);
+     console.log(topic)
+     console.log(decoded);
+    });
   },
   props: {
     msg: String
@@ -109,14 +129,18 @@ export default {
     changeTab(tab){
       this.currentNav = tab;
       if(tab == 'graphs'){
+    
         this.reRender();
+       
       }
     },
     reRender(){
+  
       this.renderGraph('temp');
       this.renderGraph('moist');
       this.renderGraph('humid');
       this.renderGraph('ambient');
+    
     },
     enableOne(val){
       this.sprinklers[val] = true;
@@ -134,6 +158,7 @@ export default {
         this.sprinklers[i] = false;
       }
     },
+
     renderGraph(arg){
       d3.select("#" + arg).html("");
 
@@ -212,6 +237,9 @@ export default {
     }
   }
 }
+
+
+
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
