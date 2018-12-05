@@ -16,4 +16,4 @@ See Sparkfun's original library here https://github.com/sparkfun/SparkFun_APDS-9
 
 
 
-Modified version that I am hjosting here https://github.com/jonn26/SparkFun_APDS-9960_Sensor_Arduino_Library
+Modified version that I am hosting here https://github.com/jonn26/SparkFun_APDS-9960_Sensor_Arduino_Library
